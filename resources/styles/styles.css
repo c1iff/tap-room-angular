@@ -1,7 +1,22 @@
+body{
+  background-image: url(../../resources/img/background.jpg);
+  color: white;
+}
+
 ul {
   list-style: none;
 }
 
 button {
   margin-left: 10px;
+}
+
+.form-control{
+  width: 300px;
+  margin: auto;
+}
+
+.pint-level {
+  width: 100px;
+  margin-top: 20px;
 }

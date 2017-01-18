@@ -8,17 +8,22 @@ import { Keg } from './keg.model';
       <div *ngIf="showNewKeg">
         <hr>
         <h3>Add a New Keg</h3>
-        <label>Enter Keg Name:</label>
-        <input #kegName>
-        <label>Enter Keg Brand</label><br>
-        <input #kegBrand>
-        <br>
-        <label>Enter Keg Cost</label><br>
-        <input #kegCost>
-        <br>
-        <label>Enter Keg ABV</label><br>
-        <input #kegABV>
-        <br>
+        <div class="form-group">
+          <label>Enter Keg Name:</label>
+          <input #kegName class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Enter Keg Brand</label><br>
+          <input #kegBrand class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Enter Keg Cost</label><br>
+          <input #kegCost class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Enter Keg ABV</label><br>
+          <input #kegABV class="form-control">
+        </div>
         <button class="btn btn-primary" (click)="submitForm(kegName.value, kegBrand.value, kegCost.value, kegABV.value)">Add</button>
       </div>
     </div>

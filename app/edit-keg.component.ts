@@ -9,15 +9,22 @@ import { Keg } from './keg.model';
         <h3>{{selectedKeg.name}} {{selectedKeg.brand}}</h3>
         <hr>
         <h3>Edit Keg Info</h3>
-        <label>Enter Keg Name:</label>
-        <input [(ngModel)]="selectedKeg.name">
-        <label>Enter Keg Brand</label><br>
-        <input [(ngModel)]="selectedKeg.brand">
-        <br>
-        <input [(ngModel)]="selectedKeg.price">
-        <br>
-        <input [(ngModel)]="selectedKeg.alcoholContent">
-        <br>
+        <div class="form-group">
+          <label>Enter Keg Name:</label>
+          <input [(ngModel)]="selectedKeg.name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Enter Keg Brand</label><br>
+          <input [(ngModel)]="selectedKeg.brand" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Enter the Price per Pint</label>
+          <input [(ngModel)]="selectedKeg.price" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Enter the ABV</label>
+          <input [(ngModel)]="selectedKeg.alcoholContent" class="form-control">
+        </div>
         <button class="btn btn-primary" (click)="doneButtonClicked()">Done</button>
       </div>
     </div>
