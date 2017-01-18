@@ -4,8 +4,14 @@ import { Keg } from './keg.model';
 @Component({
   selector: 'keg-list',
   template: `
+    <select class="form-control" (change)="onChange($event.target.value)">
+      <option value="allKegs" selected="selected">All Kegs</option>
+      <option value="cheapBeers">Budget Beer</option>
+      <option value="expensiveBeers">Expensive Beer</option>
+    </select>
+    <br>
     <ul>
-      <li *ngFor = "let currentKeg of kegs">Name: {{currentKeg.name}} / Brand: {{currentKeg.brand}} / Price: {{currentKeg.price}} / ABV: {{currentKeg.alcoholContent}}
+      <li *ngFor = "let currentKeg of kegs | pricefilter:filterByPrice">Name: {{currentKeg.name}} / Brand: {{currentKeg.brand}} / Price: {{currentKeg.price}} / ABV: {{currentKeg.alcoholContent}}
       <button class="btn btn-primary" (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button><br>
       <h3>{{currentKeg.pintsLeft}} Pints Remaining</h3>
       <button class="btn btn-info" (click)="pourPint(currentKeg)">Pour Me One!</button>
@@ -20,7 +26,11 @@ export class KegListComponent{
   @Output() clickSender = new EventEmitter();
   @Output() pourBeerEmitter = new EventEmitter();
 
-  imageSource: string = '../../resources/img/green-circle.png'
+  filterByPrice: string = "allKegs";
+
+  onChange(optionFromMenu) {
+  this.filterByPrice = optionFromMenu;
+  }
 
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
