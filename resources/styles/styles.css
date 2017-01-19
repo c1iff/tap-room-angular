@@ -19,5 +19,27 @@ button {
 
 .pint-level {
   width: 100px;
-  margin-top: 20px;
+  margin: auto;
+  display: block;
+
+}
+
+.level {
+  z-index:-1;
+  width: 60px;
+  border-radius: 0 0 20px 20px;
+  background-image: -webkit-linear-gradient(bottom, rgb(255, 136, 0), rgb(255, 203, 0));
+  position: absolute;
+  bottom: 0;
+}
+
+.outline {
+  border: 5px solid white;
+  margin: auto;
+  margin-top: 10px;
+  width: 70px;
+  height: 100px;
+  text-align: center;
+  border-radius: 25px;
+  position: relative;
 }

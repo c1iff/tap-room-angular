@@ -16,7 +16,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       <h3>{{currentKeg.pintsLeft}} Pints Remaining</h3>
       <button class="btn btn-info" (click)="pourPint(currentKeg)">Pour Me One!</button>
       <br>
-      <img class="pint-level" [src]='kegLevel(currentKeg)'><hr></li>
+      <div class="outline">
+        <div class="level" [style.height]="kegLevel(currentKeg)">
+        </div>
+      </div>
+
+      <hr></li>
     </ul>
   `
 })
@@ -41,18 +46,7 @@ export class KegListComponent{
   }
 
   kegLevel(currentKeg){
-    if(currentKeg.pintsLeft > 93){
-      return '../../resources/img/green-circle.png'
-    }
-    else if(currentKeg.pintsLeft <= 93 && currentKeg.pintsLeft >= 62){
-      return '../../resources/img/yellow-circle.png'
-    }
-    else if(currentKeg.pintsLeft <= 61 && currentKeg.pintsLeft >= 31){
-      return '../../resources/img/orange-circle.png'
-    }
-    else{
-      return '../../resources/img/red-circle.png'
-    }
+    return ((currentKeg.pintsLeft/124) * 70)
   }
 
 
