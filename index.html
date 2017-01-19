@@ -18,9 +18,24 @@
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
+
   </head>
   <!-- 3. Display the application -->
   <body>
     <app-root>Loading...</app-root>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDCMKVJdX3lRNI0OzPTXqkE55Kt14Gnzt0",
+        authDomain: "tap-list.firebaseapp.com",
+        databaseURL: "https://tap-list.firebaseio.com",
+        storageBucket: "tap-list.appspot.com",
+        messagingSenderId: "736830306551"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
