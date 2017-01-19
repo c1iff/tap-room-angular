@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Keg } from './keg.model'
+// import { Keg } from './keg.model';
+import { KegService } from './get-data.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -20,11 +23,7 @@ export class AppComponent {
   selectedKeg = null;
   showNewKeg: boolean = false;
 
-  kegs: Keg[] = [
-    new Keg("IPA", "Breakside", 5, 6.7),
-    new Keg("Hefeweizen", "Widmere", 4, 5.1),
-    new Keg("Pale Ale", "Hopworks", 5, 6.2)
-  ]
+  kegs = []
 
   editKeg(selectedKeg) {
     this.selectedKeg = selectedKeg;
@@ -38,11 +37,21 @@ export class AppComponent {
     this.showNewKeg = true;
   }
 
-  addKeg(kegToAdd: Keg) {
+  addKeg(kegToAdd) {
     this.kegs.push(kegToAdd);
   }
 
-  pourBeer(kegToPour: Keg) {
+  pourBeer(kegToPour) {
     kegToPour.pintsLeft -= 1;
+  }
+
+
+constructor(private kegData: KegService) { }
+
+  ngOnInit(){
+    this.kegData.fetchData().subscribe(
+      (data) => this.kegs = data
+      
+    );
   }
 }

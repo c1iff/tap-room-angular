@@ -6,11 +6,18 @@ import { KegListComponent} from './keg-list.component';
 import { NewKegComponent} from './new-keg.component';
 import { EditKegComponent} from './edit-keg.component';
 import { PricePipe } from './price.pipe';
+import { KegService } from './get-data.service';
+import { HttpModule }    from '@angular/http';
+import 'rxjs/add/operator/map'
+
+
 
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule],
+  imports: [ BrowserModule, FormsModule, HttpModule],
+
   declarations: [ AppComponent, KegListComponent, NewKegComponent, EditKegComponent, PricePipe],
+  providers: [ KegService ],
   bootstrap:    [ AppComponent ]
 })
 

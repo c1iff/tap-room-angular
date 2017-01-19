@@ -1,0 +1,29 @@
+[
+  {
+    "name": "IPA",
+    "brand": "Breakside",
+    "price": 5,
+    "alcoholContent": 6.7,
+    "pintsLeft": 124
+  }, {
+    "name": "Hefeweizen",
+    "brand": "Widmere",
+    "price": 5,
+    "alcoholContent": 5.1,
+    "pintsLeft": 124
+  }, {
+    "name": "Pale Ale",
+    "brand": "Hopworks",
+    "price": 4,
+    "alcoholContent": 4.5,
+    "pintsLeft": 124
+  },
+
+  {
+    "name": "Beer",
+    "brand": "Budweiser",
+    "price": 4,
+    "alcoholContent": 4.5,
+    "pintsLeft": 124
+  }
+]

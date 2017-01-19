@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+// import { Keg } from './keg.model';
 
 @Component({
   selector: 'keg-list',
@@ -32,15 +32,15 @@ export class KegListComponent{
   this.filterByPrice = optionFromMenu;
   }
 
-  editButtonHasBeenClicked(kegToEdit: Keg) {
+  editButtonHasBeenClicked(kegToEdit) {
     this.clickSender.emit(kegToEdit);
   }
 
-  pourPint(kegToPour: Keg) {
+  pourPint(kegToPour) {
     this.pourBeerEmitter.emit(kegToPour)
   }
 
-  kegLevel(currentKeg: Keg){
+  kegLevel(currentKeg){
     if(currentKeg.pintsLeft > 93){
       return '../../resources/img/green-circle.png'
     }
@@ -54,5 +54,6 @@ export class KegListComponent{
       return '../../resources/img/red-circle.png'
     }
   }
+
 
 }
