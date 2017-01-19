@@ -8,7 +8,7 @@ export class KegService {
   constructor(private http: Http) { }
 
   fetchData(){
-    return this.http.get('/kegs.json').map(
+    return this.http.get('https://tap-list.firebaseio.com/.json').map(
       (res) => res.json()
     );
   }
