@@ -60,10 +60,6 @@ export class AppComponent {
 constructor(private kegData: KegService) { }
 
   ngOnInit(){
-    // this.kegData.fetchData().subscribe(
-    //   (data) => this.kegs = data
-    //
-    // );
     this.fbGetData()
   }
 

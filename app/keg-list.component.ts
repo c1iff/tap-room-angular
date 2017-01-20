@@ -46,7 +46,7 @@ export class KegListComponent{
   }
 
   kegLevel(currentKeg){
-    return ((currentKeg.pintsLeft/124) * 70)
+    return ((currentKeg.pintsLeft/124) * 85)
   }
 
 
